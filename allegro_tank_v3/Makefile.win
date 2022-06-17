@@ -1,0 +1,34 @@
+# Project: guerra_de_tanque
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = guerra_de_tanque_private.res
+OBJ  = main.obj $(RES)
+LINKOBJ  = main.obj $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lalleg  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"C:/Dev-Cpp/include/wx/msw"  -I"C:/Dev-Cpp/include/wx/generic"  -I"C:/Dev-Cpp/include/wx/animate"  -I"C:/Dev-Cpp/include/wx/fl"  -I"C:/Dev-Cpp/include/wx/gizmos"  -I"C:/Dev-Cpp/include/wx/html"  -I"C:/Dev-Cpp/include/wx/mmedia"  -I"C:/Dev-Cpp/include/wx/net"  -I"C:/Dev-Cpp/include/wx/ogl"  -I"C:/Dev-Cpp/include/wx/plot"  -I"C:/Dev-Cpp/include/wx/protocol"  -I"C:/Dev-Cpp/include/wx/stc"  -I"C:/Dev-Cpp/include/wx/svg"  -I"C:/Dev-Cpp/include/wx/xml"  -I"C:/Dev-Cpp/include/wx/xrc"  -I"C:/Dev-Cpp/include/wx" 
+BIN  = guerra_de_tanque.exe
+CXXFLAGS = $(CXXINCS)  -fexpensive-optimizations -O3
+CFLAGS = $(INCS)  -fexpensive-optimizations -O3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before guerra_de_tanque.exe all-after
+
+
+clean: clean-custom
+clean: 
+	$(RM) $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "guerra_de_tanque.exe" $(LIBS)
+
+main.obj: main.cpp C:/Dev-Cpp/include/allegro/base.h C:/Dev-Cpp/include/errno.h   C:/Dev-Cpp/include/_mingw.h   C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include/limits.h   C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include/syslimits.h   C:/Dev-Cpp/include/limits.h   C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include/stdarg.h   C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include/stddef.h   C:/Dev-Cpp/include/stdlib.h C:/Dev-Cpp/include/time.h   C:/Dev-Cpp/include/allegro/internal/alconfig.h   C:/Dev-Cpp/include/allegro/platform/alplatf.h   C:/Dev-Cpp/include/allegro/platform/almngw32.h C:/Dev-Cpp/include/io.h   C:/Dev-Cpp/include/sys/types.h C:/Dev-Cpp/include/stdint.h   C:/Dev-Cpp/include/fcntl.h C:/Dev-Cpp/include/direct.h   C:/Dev-Cpp/include/malloc.h C:/Dev-Cpp/include/allegro/system.h   C:/Dev-Cpp/include/allegro/base.h   C:/Dev-Cpp/include/allegro/inline/system.inl   C:/Dev-Cpp/include/allegro/debug.h C:/Dev-Cpp/include/allegro/debug.h   C:/Dev-Cpp/include/allegro/unicode.h C:/Dev-Cpp/include/allegro/mouse.h   C:/Dev-Cpp/include/allegro/timer.h   C:/Dev-Cpp/include/allegro/keyboard.h   C:/Dev-Cpp/include/allegro/joystick.h   C:/Dev-Cpp/include/allegro/palette.h C:/Dev-Cpp/include/allegro/gfx.h   C:/Dev-Cpp/include/allegro/fixed.h   C:/Dev-Cpp/include/allegro/inline/gfx.inl   C:/Dev-Cpp/include/allegro/inline/asm.inl   C:/Dev-Cpp/include/allegro/platform/al386gcc.h   C:/Dev-Cpp/include/allegro/color.h C:/Dev-Cpp/include/allegro/palette.h   C:/Dev-Cpp/include/allegro/inline/color.inl   C:/Dev-Cpp/include/allegro/draw.h C:/Dev-Cpp/include/allegro/gfx.h   C:/Dev-Cpp/include/allegro/inline/draw.inl   C:/Dev-Cpp/include/allegro/inline/gfx.inl   C:/Dev-Cpp/include/allegro/rle.h   C:/Dev-Cpp/include/allegro/inline/rle.inl   C:/Dev-Cpp/include/allegro/compiled.h C:/Dev-Cpp/include/allegro/text.h   C:/Dev-Cpp/include/allegro/fli.h C:/Dev-Cpp/include/allegro/config.h   C:/Dev-Cpp/include/allegro/gui.h   C:/Dev-Cpp/include/allegro/inline/gui.inl   C:/Dev-Cpp/include/allegro/sound.h C:/Dev-Cpp/include/allegro/digi.h   C:/Dev-Cpp/include/allegro/stream.h C:/Dev-Cpp/include/allegro/midi.h   C:/Dev-Cpp/include/allegro/file.h   C:/Dev-Cpp/include/allegro/inline/file.inl   C:/Dev-Cpp/include/allegro/datafile.h   C:/Dev-Cpp/include/allegro/fixed.h C:/Dev-Cpp/include/allegro/fmaths.h   C:/Dev-Cpp/include/allegro/inline/fmaths.inl   C:/Dev-Cpp/include/allegro/matrix.h C:/Dev-Cpp/include/allegro/fmaths.h   C:/Dev-Cpp/include/allegro/inline/matrix.inl   C:/Dev-Cpp/include/allegro/quat.h C:/Dev-Cpp/include/allegro/3d.h   C:/Dev-Cpp/include/allegro/3dmaths.h   C:/Dev-Cpp/include/allegro/inline/3dmaths.inl   C:/Dev-Cpp/include/allegro/alcompat.h   C:/Dev-Cpp/include/allegro/platform/alwin.h   C:/Dev-Cpp/include/allegro/fix.h   C:/Dev-Cpp/include/allegro/inline/fix.inl tanque.h
+	$(CPP) -c main.cpp -o main.obj $(CXXFLAGS)
+
+guerra_de_tanque_private.res: guerra_de_tanque_private.rc 
+	$(WINDRES) -i guerra_de_tanque_private.rc --input-format=rc -o guerra_de_tanque_private.res -O coff 
